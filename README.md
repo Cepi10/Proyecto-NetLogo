@@ -1,3 +1,57 @@
+NOMBRE:Cristian Sebastian Luna
+CODIGO: 1004548668
+
+[Uploading Fireworks.nlogo…]()
+
+[MARCO_TEORICO.txt](https://github.com/user-attachments/files/15520279/MARCO_TEORICO.txt)[UplEste código en NetLogo simula un espectáculo de fuegos artificiales, donde cohetes explotan en
+ el aire liberando partículas que se desvanecen gradualmente. A continuación, se presenta un 
+marco teórico.
+
+Marco Teórico
+El modelo se basa en la física del movimiento bajo gravedad y la dinámica de partículas. Los 
+cohetes (representados por tortugas de la breed rockets) se lanzan desde posiciones aleatorias 
+y se mueven hacia abajo debido a la gravedad. Cuando alcanzan cierta velocidad vertical 
+(definida por terminal-y-vel), explotan, liberando partículas (representadas por tortugas de la breed frags)
+. Estas partículas tienen velocidades aleatorias y colores variados 
+(En este caso fue modificado ah qeu solo las luces sean grises), creando un efecto visual de explosión.
+ Con el tiempo, estas partículas desvanecen gradualmente hasta desaparecer.oading MARCO_TEORICO.txt…]()
+
+
+Desarrollo del Código
+1. Configuración inicial: La función setup configura el entorno, limpiando todo el mundo, 
+estableciendo la forma predeterminada de las tortugas a "triangle" y reiniciando el contador de ticks.
+
+2. Ejecución del modelo: La función go verifica si hay tortugas en el mundo. Si no hay ninguna, 
+inicia una nueva salva de fuegos artificiales llamando a init-rockets y establece un temporizador 
+(countdown) para la próxima salva. Si hay tortugas, ejecuta el movimiento de proyectiles y avanza 
+el tiempo en 1 tick.
+
+3. Inicialización de cohetes: init-rockets crea un número aleatorio de cohetes basado en el control 
+deslizante FUEGOS ARTIFICIALES. Cada cohete tiene valores iniciales aleatorios para su posición, 
+velocidad y color, y una velocidad de explosión (terminal-y-vel).
+
+4. Movimiento de proyectiles: projectile-motion simula el movimiento de caída libre de las tortugas. 
+Si la tortuga es un cohete, comprueba si ha alcanzado la velocidad de explosión. Si es un fragmento,
+reduce su opacidad (dim) y cambia de color.
+
+5. Explosión: Al explotar, un cohete genera un número de fragmentos (fragments) basado en el control 
+deslizante FRAGMENTS. Cada fragmento tiene una velocidad aleatoria y se coloca en una dirección aleatoria.
+ Algunos fragmentos pueden dejar un rastro si el control deslizante trails? está activado.
+
+6. Desvanecimiento de fragmentos: Los fragmentos reducen su opacidad (dim) y cambian de color 
+(EN este caso de un mismo color) gradualmente hasta desaparecer completamente.
+
+(NOTA): Este modelo combina elementos de física, simulación de agentes y diseño gráfico para crear 
+un espectáculo visual dinámico y atractivo. La interacción entre cohetes y fragmentos, junto 
+con la variabilidad en sus propiedades, contribuye a la diversidad y belleza del espectáculo de fuegos
+ artificiales simulado.
+[DESARROLLO_DEL_CODIGO.txt](https://github.com/user-attachments/files/15520278/DESARROLLO_DEL_CODIGO.txt)
+
+Link del programa que se modifico:
+https://www.netlogoweb.org/launch#https://www.netlogoweb.org/assets/modelslib/Sample%20Models/Art/Fireworks.nlogo
+
+CODIGO MODIFICADO
+
 breed [ rockets rocket ]
 breed [ frags frag ]
 
